@@ -219,7 +219,7 @@ function formatMarkdownSummary(toolName, data) {
       `\n### Free Interactive Tools & 1-Click Custom Clearance Pack for \`${data.candidate}\``,
       `- **Free 60-Name Generator & .com/.ai Screener:** [Generate Available Variations](${data.upgradeLinks.nameGeneratorUrl})`,
       `- **Live Shareable Brand Report:** [Open Interactive Report](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Unlock BrandShield Pro ($19 one-time — 500-name CSV batch CLI, 60+ verified variations & Nice Class matrix):** [1-Click Custom Pack (Direct Checkout)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+      `- **Unlock BrandShield Pro ($12 one-time vs $228+/yr — 500-name CSV batch CLI, 60+ verified variations & Nice Class matrix):** [1-Click Custom Pack (Direct Checkout)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
     ].join("\n");
   }
 
@@ -235,7 +235,7 @@ function formatMarkdownSummary(toolName, data) {
       `\n### Free SPF Flattener & 1-Click Custom DNS Fix Pack for \`${data.domain}\``,
       `- **Free Instant SPF Flattener (<10 DNS Lookups):** [Flatten SPF for ${data.domain}](${data.upgradeLinks.freeSpfFlattenerUrl})`,
       `- **Live Custom DNS Fix Preview:** [Open Deliverability Report](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Unlock InboxShield Pro ($29 one-time — Custom \`${data.domain}\` DNS zone patch, auto-flattener CLI & 24/7 drift alerts):** [1-Click Custom Fix Pack (Pre-filled for ${data.domain})](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+      `- **Unlock InboxShield Pro ($15 one-time vs $432/yr — Custom \`${data.domain}\` DNS zone patch, auto-flattener CLI & 6h drift alerts):** [1-Click Custom Fix Pack (Pre-filled for ${data.domain})](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
     ].join("\n");
   }
 
@@ -249,7 +249,7 @@ function formatMarkdownSummary(toolName, data) {
       `\n### Free /llms.txt Generator & 1-Click Custom GEO Pack for \`${data.origin}\``,
       `- **Free Instant /llms.txt & JSON-LD Generator:** [Generate /llms.txt for ${data.origin}](${data.upgradeLinks.freeLlmsGeneratorUrl})`,
       `- **Interactive GEO Citation Report:** [Open Visibility Report](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Unlock CiteReady Pro ($19 one-time — 500-page local crawler, custom \`/llms-full.txt\` + Schema.org bundle & CI gate):** [1-Click Custom GEO Pack (Pre-filled)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+      `- **Unlock CiteReady Pro ($12 one-time vs $348+/yr — Schema.org entity graph, VS page generator, 500-page crawler & CI gate):** [1-Click Custom GEO Pack (Pre-filled)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
     ].join("\n");
   }
 
@@ -260,8 +260,8 @@ function formatMarkdownSummary(toolName, data) {
     `- **AI Search & GEO:** ${data.pillars.aiSearchVisibility.score}/100 (${data.pillars.aiSearchVisibility.grade}) — \`/llms.txt\`: ${data.pillars.aiSearchVisibility.hasLlmsTxt ? "Yes" : "No"}`,
     data.prioritizedFixes.length ? `\n### Prioritized Pre-Launch Remediation Checklist\n${data.prioritizedFixes.map((f) => `- ${f}`).join("\n")}` : "\nAll 3 launch readiness pillars look healthy!",
     `\n### Free Remediation Generators & 3-in-1 Custom Fix Bundle for \`${data.domain}\``,
-    `- **Free Instant Generators:** [SPF Flattener](${data.bundleUpgrade.freeTools.spfFlattenerUrl}) · [/llms.txt Generator](${data.bundleUpgrade.freeTools.llmsGeneratorUrl}) · [Startup Name Screener](${data.bundleUpgrade.freeTools.brandNamerUrl})`,
-    `- **Unlock OmniForge 3-in-1 Founder Launch Stack ($49 Solo / $89 Agency — Save $38, custom-built for \`${data.domain}\`):** [1-Click Custom Bundle (Pre-filled for ${data.domain})](${data.bundleUpgrade.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.bundleUpgrade.gumroadUrl})`,
+    `- **Free Instant Generators:** [AI App & RLS Security Scan](${data.bundleUpgrade.freeTools.vibeScannerUrl}) · [SPF Flattener](${data.bundleUpgrade.freeTools.spfFlattenerUrl}) · [GEO Generator](${data.bundleUpgrade.freeTools.llmsGeneratorUrl}) · [Startup Name Screener](${data.bundleUpgrade.freeTools.brandNamerUrl})`,
+    `- **Unlock OmniForge 4-in-1 Complete Founder Suite ($29 Solo / $59 Agency — All 4 Pro Kits, custom-built for \`${data.domain}\`):** [1-Click Custom Bundle (Pre-filled for ${data.domain})](${data.bundleUpgrade.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.bundleUpgrade.gumroadUrl})`,
   ].join("\n");
 }
 
@@ -387,10 +387,11 @@ export async function dispatchJsonRpcMessage(msg) {
             "Single-URL AI crawler robots.txt + /llms.txt + Schema.org JSON-LD audit",
           ],
           proToolkits: [
-            { name: "BrandShield Pro", soloUsd: 19, agencyUsd: 39, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/brandshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/brandshield" },
-            { name: "InboxShield Pro", soloUsd: 29, agencyUsd: 49, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
-            { name: "CiteReady Pro", soloUsd: 19, agencyUsd: 39, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready" },
-            { name: "OmniForge 3-in-1 Founder Launch Stack", soloUsd: 49, agencyUsd: 89, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack" },
+            { name: "VibeShield Pro", soloUsd: 9, agencyUsd: 25, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/vibeshield" },
+            { name: "BrandShield Pro", soloUsd: 12, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/brandshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/brandshield" },
+            { name: "InboxShield Pro", soloUsd: 15, agencyUsd: 35, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
+            { name: "CiteReady Pro", soloUsd: 12, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready" },
+            { name: "OmniForge 4-in-1 Complete Founder Suite", soloUsd: 29, agencyUsd: 59, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack" },
           ],
         };
         return {

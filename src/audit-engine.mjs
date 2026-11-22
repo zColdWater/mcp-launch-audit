@@ -557,10 +557,11 @@ export async function runFullLaunchAudit({ domain, brandName }) {
     prioritizedFixes,
     details: { brand, email, geo },
     bundleUpgrade: {
-      name: "OmniForge 3-in-1 Founder Launch Stack (BrandShield Pro + InboxShield Pro + CiteReady Pro — Save $38)",
-      soloPriceUsd: 49,
-      agencyPriceUsd: 89,
+      name: "OmniForge 4-in-1 Complete Founder Suite (VibeShield Pro + BrandShield Pro + InboxShield Pro + CiteReady Pro — Save $19)",
+      soloPriceUsd: 29,
+      agencyPriceUsd: 59,
       freeTools: {
+        vibeScannerUrl: `https://vibe-checker.appwrite.network/?url=${encodeURIComponent(`https://${cleanDomain}`)}`,
         brandNamerUrl: `https://brand-checker.appwrite.network/namer?q=${encodeURIComponent(inferredBrand)}`,
         spfFlattenerUrl: `https://inbox-checker.appwrite.network/spf-flattener?domain=${encodeURIComponent(cleanDomain)}`,
         llmsGeneratorUrl: `https://citeready-checker.appwrite.network/generator?url=${encodeURIComponent(`https://${cleanDomain}`)}`,
