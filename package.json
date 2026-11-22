@@ -1,0 +1,53 @@
+{
+  "name": "mcp-launch-audit",
+  "version": "1.0.0",
+  "description": "Zero-dependency MCP server for pre-launch startup brand & USPTO trademark checks, SPF/DKIM/DMARC/DNSBL email deliverability audits, and AI search (GEO / llms.txt / Schema.org) readiness.",
+  "type": "module",
+  "main": "./src/mcp-core.mjs",
+  "bin": {
+    "mcp-launch-audit": "./bin/mcp-launch-audit.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "glama.json",
+    "smithery.yaml",
+    "server.json",
+    "Dockerfile",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node ./bin/mcp-launch-audit.mjs",
+    "test": "node ./test/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "seo",
+    "geo",
+    "llms-txt",
+    "email-deliverability",
+    "spf",
+    "dmarc",
+    "dkim",
+    "domain-availability",
+    "trademark",
+    "rdap",
+    "startup-tools"
+  ],
+  "author": "OmniForge Studio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zColdWater/mcp-launch-audit.git"
+  },
+  "homepage": "https://github.com/zColdWater/mcp-launch-audit#readme",
+  "bugs": {
+    "url": "https://github.com/zColdWater/mcp-launch-audit/issues"
+  }
+}

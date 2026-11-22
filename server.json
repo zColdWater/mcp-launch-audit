@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.zColdWater/mcp-launch-audit",
+  "description": "Pre-launch brand & USPTO trademark checks, SPF/DKIM/DMARC/DNSBL email audits, and AI search (llms.txt) readiness.",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/zColdWater/mcp-launch-audit",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://brand-checker.appwrite.network/mcp"
+    }
+  ]
+}
