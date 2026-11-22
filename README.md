@@ -78,9 +78,9 @@ Need batch CSV screening across 500 names/domains, automatic SPF flattening, 500
 | Pillar | Free Interactive Web App | Open-Source CLI & GitHub Action | Pro Offline Suite & Agency License |
 | :--- | :--- | :--- | :--- |
 | **Brand & Trademarks** | [brand-checker.appwrite.network](https://brand-checker.appwrite.network) | [zColdWater/brandshield-cli](https://github.com/zColdWater/brandshield-cli) | [BrandShield Pro ($19)](https://agentarenastudi.gumroad.com/l/omniforge-brandshield) · [Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/brandshield) |
-| **Email Deliverability** | [inbox-checker.appwrite.network](https://inbox-checker.appwrite.network) | [zColdWater/inboxshield-cli](https://github.com/zColdWater/inboxshield-cli) | [InboxShield Pro ($29)](https://agentarenastudi.gumroad.com/l/omniforge-inboxshield) · [Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/inboxshield) |
-| **AI Search & `llms.txt`** | [citeready-checker.appwrite.network](https://citeready-checker.appwrite.network) | [zColdWater/citeready-cli](https://github.com/zColdWater/citeready-cli) | [CiteReady Pro ($19)](https://agentarenastudi.gumroad.com/l/omniforge-citeready) · [Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/citeready) |
-| **3-in-1 Launch Bundle** | All 3 Web Checkers | All 3 GitHub Actions | [Founder Launch Stack ($49 — Save $38)](https://agentarenastudi.gumroad.com/l/omniforge-launch-stack) · [Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/launch-stack) |
+| **Email Deliverability** | [inbox-checker.appwrite.network](https://inbox-checker.appwrite.network) | [zColdWater/inboxshield-cli](https://github.com/zColdWater/inboxshield-cli) | [InboxShield Pro ($29)](https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield) · [Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/inboxshield) |
+| **AI Search & `llms.txt`** | [citeready-checker.appwrite.network](https://citeready-checker.appwrite.network) | [zColdWater/citeready-cli](https://github.com/zColdWater/citeready-cli) | [CiteReady Pro ($19)](https://omnipulse-x402.appwrite.network/go/gumroad/citeready) · [Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/citeready) |
+| **3-in-1 Launch Bundle** | All 3 Web Checkers | All 3 GitHub Actions | [Founder Launch Stack ($49 — Save $38)](https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack) · [Direct Checkout](https://omnipulse-x402.appwrite.network/checkout/launch-stack) |
 
 ---
 

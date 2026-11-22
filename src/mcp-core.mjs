@@ -377,9 +377,9 @@ export async function dispatchJsonRpcMessage(msg) {
           ],
           proToolkits: [
             { name: "BrandShield Pro", soloUsd: 19, agencyUsd: 39, gumroadUrl: "https://agentarenastudi.gumroad.com/l/omniforge-brandshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/brandshield" },
-            { name: "InboxShield Pro", soloUsd: 29, agencyUsd: 49, gumroadUrl: "https://agentarenastudi.gumroad.com/l/omniforge-inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
-            { name: "CiteReady Pro", soloUsd: 19, agencyUsd: 39, gumroadUrl: "https://agentarenastudi.gumroad.com/l/omniforge-citeready", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready" },
-            { name: "OmniForge 3-in-1 Founder Launch Stack", soloUsd: 49, agencyUsd: 89, gumroadUrl: "https://agentarenastudi.gumroad.com/l/omniforge-launch-stack", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack" },
+            { name: "InboxShield Pro", soloUsd: 29, agencyUsd: 49, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
+            { name: "CiteReady Pro", soloUsd: 19, agencyUsd: 39, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready" },
+            { name: "OmniForge 3-in-1 Founder Launch Stack", soloUsd: 49, agencyUsd: 89, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack" },
           ],
         };
         return {

@@ -380,7 +380,7 @@ export async function runEmailDeliverabilityAudit({ domain }) {
     upgradeLinks: {
       interactiveReportUrl: `https://inbox-checker.appwrite.network/?domain=${encodeURIComponent(cleanDomain)}`,
       proToolkitName: "InboxShield Pro (Automatic SPF Flattener, 500-domain batch audit & 24/7 Slack/Discord drift alerts)",
-      gumroadUrl: "https://agentarenastudi.gumroad.com/l/omniforge-inboxshield",
+      gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield",
       directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield",
     },
   };
@@ -516,7 +516,7 @@ export async function runAiSearchVisibilityAudit({ url }) {
     upgradeLinks: {
       interactiveReportUrl: `https://citeready-checker.appwrite.network/?url=${encodeURIComponent(target.href)}`,
       proToolkitName: "CiteReady Pro (500-page local crawler, automatic /llms.txt + JSON-LD compiler & CI visibility gate)",
-      gumroadUrl: "https://agentarenastudi.gumroad.com/l/omniforge-citeready",
+      gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready",
       directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready",
     },
   };
@@ -557,7 +557,7 @@ export async function runFullLaunchAudit({ domain, brandName }) {
       name: "OmniForge 3-in-1 Founder Launch Stack (BrandShield Pro + InboxShield Pro + CiteReady Pro — Save $38)",
       soloPriceUsd: 49,
       agencyPriceUsd: 89,
-      gumroadUrl: "https://agentarenastudi.gumroad.com/l/omniforge-launch-stack",
+      gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack",
       directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack",
     },
   };
