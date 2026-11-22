@@ -295,7 +295,7 @@ function formatMarkdownSummary(toolName, data) {
       `\n### Free SPF Flattener & Single-Domain Emergency Fix for \`${data.domain}\``,
       `- **Free Instant SPF Flattener (<10 DNS Lookups):** [Flatten SPF for ${data.domain}](${data.upgradeLinks.freeSpfFlattenerUrl})`,
       `- **Live 6-Phase Protocol Diagnostic:** [Open InboxShield v7.0 Report](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Unlock Single-Domain Emergency Fix ($9 one-time vs $432/yr — Exact copy-paste SPF/DMARC/DKIM/MTA-STS/TLS-RPT for 5 registrars):** [Unlock for ${data.domain} ($9)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+      `- **Unlock Single-Domain Emergency Fix ($2 Launch Special (reg. $9) vs $432/yr — Exact copy-paste SPF/DMARC/DKIM/MTA-STS/TLS-RPT for 5 registrars):** [Unlock for ${data.domain} ($2)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
     ].join("\n");
   }
 
@@ -308,9 +308,9 @@ function formatMarkdownSummary(toolName, data) {
       `- **Cloud DB Exposure:** Supabase open tables: **${data.supabaseExposedTables}** · Firebase RTDB/Firestore public: **${data.firebasePublic ? "YES" : "No"}**`,
       `- **Headers, CSP & CVEs:** ${data.headersPassed}/${data.headersTotal} Observatory headers · CSP Grade **${data.cspGrade}** · **${data.cves.length}** passive CVE advisory(ies)`,
       data.findings.length ? `\n### Top Security Findings (${data.findings.length})\n${data.findings.slice(0, 8).map((f) => `- **[${String(f.severity || "info").toUpperCase()}]** ${f.title}`).join("\n")}` : "\nNo security gaps detected across all 6 phases.",
-      `\n### Interactive 6-Phase Console & Single-App Fix Unlock ($9 One-Time)`,
+      `\n### Interactive 6-Phase Console & Single-App Fix Unlock ($2 Launch Special, reg. $9)`,
       `- **Open Live 6-Phase Trace Report:** [VibeShield v7.0 Scanner](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Unlock Single-App Fix Pack ($9 one-time vs $348/yr — Exact file/line evidence + Cursor/Lovable prompt, Vercel/Cloudflare/Nginx headers, Supabase RLS SQL & Firebase Rules):** [Direct Checkout](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+      `- **Unlock Single-App Fix Pack ($2 Launch Special (reg. $9) vs $348/yr — Exact file/line evidence + Cursor/Lovable prompt, Vercel/Cloudflare/Nginx headers, Supabase RLS SQL & Firebase Rules):** [Direct Checkout](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
     ].join("\n");
   }
 
@@ -324,7 +324,7 @@ function formatMarkdownSummary(toolName, data) {
       `\n### Free /llms.txt Generator & 1-Click Custom GEO Pack for \`${data.origin}\``,
       `- **Free Instant /llms.txt & JSON-LD Generator:** [Generate /llms.txt for ${data.origin}](${data.upgradeLinks.freeLlmsGeneratorUrl})`,
       `- **Interactive GEO Citation Report:** [Open Visibility Report](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Unlock CiteReady Pro ($12 one-time vs $348+/yr — Schema.org entity graph, VS page generator, 500-page crawler & CI gate):** [1-Click Custom GEO Pack (Pre-filled)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+      `- **Unlock CiteReady Pro ($2 Launch Special (reg. $12) vs $348+/yr — Schema.org entity graph, VS page generator, 500-page crawler & CI gate):** [1-Click Custom GEO Pack (Pre-filled)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
     ].join("\n");
   }
 
@@ -336,7 +336,7 @@ function formatMarkdownSummary(toolName, data) {
     data.prioritizedFixes.length ? `\n### Prioritized Pre-Launch Remediation Checklist\n${data.prioritizedFixes.map((f) => `- ${f}`).join("\n")}` : "\nAll 3 launch readiness pillars look healthy!",
     `\n### Free Remediation Generators & 3-in-1 Custom Fix Bundle for \`${data.domain}\``,
     `- **Free Instant Generators:** [AI App & RLS Security Scan](${data.bundleUpgrade.freeTools.vibeScannerUrl}) · [SPF Flattener](${data.bundleUpgrade.freeTools.spfFlattenerUrl}) · [GEO Generator](${data.bundleUpgrade.freeTools.llmsGeneratorUrl}) · [Startup Name Screener](${data.bundleUpgrade.freeTools.brandNamerUrl})`,
-    `- **Unlock OmniForge 4-in-1 Complete Founder Suite ($29 Solo / $59 Agency — All 4 Pro Kits, custom-built for \`${data.domain}\`):** [1-Click Custom Bundle (Pre-filled for ${data.domain})](${data.bundleUpgrade.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.bundleUpgrade.gumroadUrl})`,
+    `- **Unlock OmniForge 4-in-1 Complete Founder Suite ($5 Launch Special (reg. $29) — All 4 Pro Kits, custom-built for \`${data.domain}\`):** [1-Click Custom Bundle (Pre-filled for ${data.domain})](${data.bundleUpgrade.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.bundleUpgrade.gumroadUrl})`,
   ].join("\n");
 }
 
@@ -534,11 +534,11 @@ export async function dispatchJsonRpcMessage(msg) {
             "Single-URL AI crawler robots.txt + /llms.txt + Schema.org JSON-LD audit",
           ],
           proToolkits: [
-            { name: "VibeShield v7.0 Single-App Fix Unlock", soloUsd: 9, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/vibeshield" },
-            { name: "InboxShield v7.0 Single-Domain Emergency Fix", soloUsd: 9, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
+            { name: "VibeShield v7.0 Single-App Fix Unlock", soloUsd: 2, regularUsd: 9, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/vibeshield" },
+            { name: "InboxShield v7.0 Single-Domain Emergency Fix", soloUsd: 2, regularUsd: 9, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
             { name: "BrandShield v6.2 (100% Free Forever)", soloUsd: 0, agencyUsd: 0, webUrl: "https://brand-checker.appwrite.network/" },
-            { name: "CiteReady Pro", soloUsd: 12, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready" },
-            { name: "OmniForge 4-in-1 Complete Founder Suite", soloUsd: 29, agencyUsd: 59, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack" },
+            { name: "CiteReady Pro", soloUsd: 2, regularUsd: 12, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready" },
+            { name: "OmniForge 4-in-1 Complete Founder Suite", soloUsd: 5, regularUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack" },
           ],
         };
         return {

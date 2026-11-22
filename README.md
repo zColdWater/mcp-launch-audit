@@ -69,11 +69,11 @@ All tools are strictly **read-only** (`readOnlyHint: true`, `destructiveHint: fa
 
 | Pillar | Live Online Web App | Open-Source Repo | Pricing |
 | :--- | :--- | :--- | :--- |
-| **6-Phase Web & AI App Security** | [vibe-checker.appwrite.network](https://vibe-checker.appwrite.network) | [zColdWater/vibeshield-cli](https://github.com/zColdWater/vibeshield-cli) | Free 6-Phase Scan · [$9 Single-App Fix Unlock](https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield) |
-| **Email Deliverability & DMARC** | [inbox-checker.appwrite.network](https://inbox-checker.appwrite.network) · [/spf-flattener](https://inbox-checker.appwrite.network/spf-flattener) | [zColdWater/inboxshield-cli](https://github.com/zColdWater/inboxshield-cli) | Free 6-Phase Audit · [$9 Single-Domain Fix](https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield) |
+| **6-Phase Web & AI App Security** | [vibe-checker.appwrite.network](https://vibe-checker.appwrite.network) | [zColdWater/vibeshield-cli](https://github.com/zColdWater/vibeshield-cli) | Free 6-Phase Scan · [$2 Launch Special (~~$9~~)](https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield) |
+| **Email Deliverability & DMARC** | [inbox-checker.appwrite.network](https://inbox-checker.appwrite.network) · [/spf-flattener](https://inbox-checker.appwrite.network/spf-flattener) | [zColdWater/inboxshield-cli](https://github.com/zColdWater/inboxshield-cli) | Free 6-Phase Audit · [$2 Launch Special (~~$9~~)](https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield) |
 | **Domain, 78 TLDs & Aftermarket** | [brand-checker.appwrite.network](https://brand-checker.appwrite.network) · [/namer](https://brand-checker.appwrite.network/namer) | [zColdWater/brandshield-cli](https://github.com/zColdWater/brandshield-cli) | **100% Free Forever** |
-| **AI Search & `/llms.txt`** | [citeready-checker.appwrite.network](https://citeready-checker.appwrite.network) · [/generator](https://citeready-checker.appwrite.network/generator) | [zColdWater/citeready-cli](https://github.com/zColdWater/citeready-cli) | Free Audit · [$12 Pro Kit](https://omnipulse-x402.appwrite.network/go/gumroad/citeready) |
-| **4-in-1 Launch Stack** | Unlocks all Web Pro suites | 228+ Benchmarks: [launch-audit-reports](https://zcoldwater.github.io/launch-audit-reports/) | [$29 One-Time ($0/mo)](https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack) |
+| **AI Search & `/llms.txt`** | [citeready-checker.appwrite.network](https://citeready-checker.appwrite.network) · [/generator](https://citeready-checker.appwrite.network/generator) | [zColdWater/citeready-cli](https://github.com/zColdWater/citeready-cli) | Free Audit · [$2 Launch Special (~~$12~~)](https://omnipulse-x402.appwrite.network/go/gumroad/citeready) |
+| **OmniForge Complete Suite** | Unlocks all Web Pro suites | 228+ Benchmarks: [launch-audit-reports](https://zcoldwater.github.io/launch-audit-reports/) | [$5 Launch Special (~~$29~~)](https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack) |
 
 ---
 
