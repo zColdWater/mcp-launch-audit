@@ -198,10 +198,11 @@ export async function runBrandAudit({ name, tlds = ["com", "io", "ai", "dev"] })
     trademarks,
     issues,
     upgradeLinks: {
-      interactiveReportUrl: `https://brand-checker.appwrite.network`,
+      interactiveReportUrl: `https://brand-checker.appwrite.network/report/${encodeURIComponent(label)}`,
+      nameGeneratorUrl: `https://brand-checker.appwrite.network/namer?q=${encodeURIComponent(label)}`,
       proToolkitName: "BrandShield Pro (500-name batch CSV, 60+ verified variations & Nice Class conflict matrix)",
-      gumroadUrl: "https://agentarenastudi.gumroad.com/l/omniforge-brandshield",
-      directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/brandshield",
+      gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/brandshield",
+      directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/brandshield?domain=${encodeURIComponent(`${label}.com`)}`,
     },
   };
 }
@@ -379,9 +380,10 @@ export async function runEmailDeliverabilityAudit({ domain }) {
     issues,
     upgradeLinks: {
       interactiveReportUrl: `https://inbox-checker.appwrite.network/?domain=${encodeURIComponent(cleanDomain)}`,
+      freeSpfFlattenerUrl: `https://inbox-checker.appwrite.network/spf-flattener?domain=${encodeURIComponent(cleanDomain)}`,
       proToolkitName: "InboxShield Pro (Automatic SPF Flattener, 500-domain batch audit & 24/7 Slack/Discord drift alerts)",
       gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield",
-      directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield",
+      directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/inboxshield?domain=${encodeURIComponent(cleanDomain)}`,
     },
   };
 }
@@ -515,9 +517,10 @@ export async function runAiSearchVisibilityAudit({ url }) {
     issues,
     upgradeLinks: {
       interactiveReportUrl: `https://citeready-checker.appwrite.network/?url=${encodeURIComponent(target.href)}`,
+      freeLlmsGeneratorUrl: `https://citeready-checker.appwrite.network/generator?url=${encodeURIComponent(target.href)}`,
       proToolkitName: "CiteReady Pro (500-page local crawler, automatic /llms.txt + JSON-LD compiler & CI visibility gate)",
       gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready",
-      directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready",
+      directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/citeready?domain=${encodeURIComponent(target.hostname)}`,
     },
   };
 }
@@ -557,8 +560,13 @@ export async function runFullLaunchAudit({ domain, brandName }) {
       name: "OmniForge 3-in-1 Founder Launch Stack (BrandShield Pro + InboxShield Pro + CiteReady Pro — Save $38)",
       soloPriceUsd: 49,
       agencyPriceUsd: 89,
+      freeTools: {
+        brandNamerUrl: `https://brand-checker.appwrite.network/namer?q=${encodeURIComponent(inferredBrand)}`,
+        spfFlattenerUrl: `https://inbox-checker.appwrite.network/spf-flattener?domain=${encodeURIComponent(cleanDomain)}`,
+        llmsGeneratorUrl: `https://citeready-checker.appwrite.network/generator?url=${encodeURIComponent(`https://${cleanDomain}`)}`,
+      },
       gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack",
-      directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack",
+      directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/launch-stack?domain=${encodeURIComponent(cleanDomain)}`,
     },
   };
 }
