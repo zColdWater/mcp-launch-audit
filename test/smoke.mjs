@@ -24,7 +24,7 @@ function send(obj) {
   child.stdin.write(JSON.stringify(obj) + "\n");
 }
 
-async function waitForCount(n, timeoutMs = 15000) {
+async function waitForCount(n, timeoutMs = 20000) {
   const start = Date.now();
   while (lines.length < n) {
     if (Date.now() - start > timeoutMs) throw new Error(`Timed out waiting for ${n} responses (got ${lines.length})`);
@@ -32,30 +32,33 @@ async function waitForCount(n, timeoutMs = 15000) {
   }
 }
 
-send({ jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-03-26", capabilities: {}, clientInfo: { name: "smoke", version: "1.0" } } });
+send({ jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-03-26", capabilities: {}, clientInfo: { name: "smoke", version: "2.0" } } });
 send({ jsonrpc: "2.0", method: "notifications/initialized" });
 send({ jsonrpc: "2.0", id: 2, method: "tools/list" });
 send({ jsonrpc: "2.0", id: 3, method: "prompts/list" });
 send({ jsonrpc: "2.0", id: 4, method: "resources/list" });
 send({ jsonrpc: "2.0", id: 5, method: "tools/call", params: { name: "audit_email_deliverability", arguments: { domain: "resend.com" } } });
+send({ jsonrpc: "2.0", id: 6, method: "tools/call", params: { name: "audit_web_app_security", arguments: { url: "https://vibe-checker.appwrite.network", mode: "fast" } } });
 
-await waitForCount(5);
+await waitForCount(6);
 child.kill();
 
-assert.equal(lines[0].id, 1);
-assert.equal(lines[0].result.serverInfo.name, "mcp-launch-audit");
-assert.equal(lines[1].id, 2);
-assert.equal(lines[1].result.tools.length, 4);
-assert.equal(lines[2].id, 3);
-assert.equal(lines[2].result.prompts.length, 2);
-assert.equal(lines[3].id, 4);
-assert.equal(lines[3].result.resources.length, 1);
-assert.equal(lines[4].id, 5);
-assert.equal(lines[4].result.isError, false);
-assert.ok(lines[4].result.structuredContent.score >= 0);
+const byId = new Map(lines.map((m) => [m.id, m]));
+assert.equal(byId.get(1).result.serverInfo.name, "mcp-launch-audit");
+assert.equal(byId.get(1).result.serverInfo.version, "2.0.0");
+assert.equal(byId.get(2).result.tools.length, 5);
+assert.equal(byId.get(3).result.prompts.length, 3);
+assert.equal(byId.get(4).result.resources.length, 1);
+assert.equal(byId.get(5).result.isError, false);
+assert.ok(byId.get(5).result.structuredContent.score >= 0);
+assert.equal(byId.get(6).result.isError, false);
+assert.equal(byId.get(6).result.structuredContent.engineVersion, "7.0.0");
+assert.equal(byId.get(6).result.structuredContent.tls.weakProtocol, false);
 
 console.log("SMOKE_OK:", {
-  protocol: lines[0].result.protocolVersion,
-  tools: lines[1].result.tools.map((t) => t.name),
-  sampleScore: lines[4].result.structuredContent.score,
+  protocol: byId.get(1).result.protocolVersion,
+  version: byId.get(1).result.serverInfo.version,
+  tools: byId.get(2).result.tools.map((t) => t.name),
+  emailScore: byId.get(5).result.structuredContent.score,
+  vibeScore: byId.get(6).result.structuredContent.score,
 });

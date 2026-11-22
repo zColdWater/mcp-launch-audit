@@ -1,7 +1,7 @@
 {
   "name": "mcp-launch-audit",
-  "version": "1.0.0",
-  "description": "Zero-dependency MCP server for pre-launch startup brand & USPTO trademark checks, SPF/DKIM/DMARC/DNSBL email deliverability audits, and AI search (GEO / llms.txt / Schema.org) readiness.",
+  "version": "2.0.0",
+  "description": "Zero-dependency MCP server for pre-launch startup & AI app audits — VibeShield v7.0 6-phase web security (52 secrets, 28 probes, Supabase RLS, Firebase, TLS 443, CSP & CVEs), BrandShield v6.2 domain/USPTO checks, InboxShield v7.0 SPF/DKIM/DMARC deliverability & CiteReady AI search (llms.txt) readiness.",
   "type": "module",
   "main": "./src/mcp-core.mjs",
   "bin": {
@@ -22,12 +22,16 @@
     "test": "node ./test/smoke.mjs"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "keywords": [
     "mcp",
     "mcp-server",
     "model-context-protocol",
+    "security-scanner",
+    "supabase",
+    "firebase",
+    "vibecoding",
     "seo",
     "geo",
     "llms-txt",

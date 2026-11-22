@@ -4,10 +4,11 @@ import {
   runAiSearchVisibilityAudit,
   runFullLaunchAudit,
 } from "./audit-engine.mjs";
+import { scanApp as runVibeSecurityScan } from "./vibe-scanner.mjs";
 
 export const SERVER_INFO = {
   name: "mcp-launch-audit",
-  version: "1.0.0",
+  version: "2.0.0",
 };
 
 const SUPPORTED_VERSIONS = new Set(["2025-03-26", "2024-11-05", "2024-10-07"]);
@@ -180,12 +181,64 @@ export const TOOLS = [
       required: ["checkedAt", "domain", "overallScore", "overallGrade", "pillars", "prioritizedFixes"],
     },
   },
+  {
+    name: "audit_web_app_security",
+    title: "VibeShield v7.0 — 6-Phase Web & AI App Security Audit",
+    description:
+      "Run a strictly read-only, non-destructive 6-phase deep security audit on a live web application URL (Next.js, Vite, Lovable, Bolt, Cursor, Supabase, Firebase): checks real TLS port 443 cert & CNAME subdomain takeover, unpacks up to 24 full JS bundles (<=2.5MB each) across 52 secret patterns, runs 28 SPA-filtered sensitive endpoint probes (GraphQL introspection, .env, .git, SourceMaps, Open Redirect, CORS), audits Supabase PostgREST RLS (up to 20 tables) & Firebase RTDB/Firestore read rules, parses Mozilla Observatory headers/CSP AST/HSTS/cookies, and matches passive framework CVEs (e.g. CVE-2025-29927, CVE-2025-48757).",
+    annotations: {
+      title: "6-Phase Web & AI App Security Audit",
+      readOnlyHint: true,
+      destructiveHint: false,
+      idempotentHint: true,
+      openWorldHint: true,
+    },
+    inputSchema: {
+      type: "object",
+      properties: {
+        url: {
+          type: "string",
+          description: "Public HTTPS web application URL to audit (e.g. 'https://yourapp.vercel.app'). Only audit apps you own or are authorized to test.",
+        },
+        mode: {
+          type: "string",
+          enum: ["deep", "fast"],
+          description: "Scan depth: 'deep' runs all 6 phases (~6-16s); 'fast' runs quick triage (<5s).",
+          default: "deep",
+        },
+      },
+      required: ["url"],
+      additionalProperties: false,
+    },
+    outputSchema: {
+      type: "object",
+      properties: {
+        ok: { type: "boolean" },
+        engineVersion: { type: "string" },
+        url: { type: "string" },
+        score: { type: "integer", minimum: 0, maximum: 100 },
+        grade: { type: "string" },
+        checksExecuted: { type: "integer" },
+        tls: { type: "object" },
+        takeover: { type: "object" },
+        secretsCount: { type: "integer" },
+        exposedEndpointsCount: { type: "integer" },
+        supabaseExposedTables: { type: "integer" },
+        firebasePublic: { type: "boolean" },
+        cspGrade: { type: "string" },
+        cves: { type: "array" },
+        findings: { type: "array" },
+        upgradeLinks: { type: "object" },
+      },
+      required: ["ok", "url", "score", "grade", "findings"],
+    },
+  },
 ];
 
 export const PROMPTS = [
   {
     name: "pre-launch-checklist",
-    description: "Run a complete 3-pillar technical launch readiness audit (Brand + Email DNS + AI Search GEO) and generate a prioritized remediation plan.",
+    description: "Run a complete launch readiness audit (Brand + Email DNS + AI Search GEO + Web Security) and generate a prioritized remediation plan.",
     arguments: [
       { name: "domain", description: "Production domain to audit (e.g. acme.io)", required: true },
     ],
@@ -195,6 +248,13 @@ export const PROMPTS = [
     description: "Diagnose SPF 10-lookup limits, missing DKIM selectors, and DMARC p=none gaps on a sending domain.",
     arguments: [
       { name: "domain", description: "Sending domain experiencing inbox placement issues", required: true },
+    ],
+  },
+  {
+    name: "pre-launch-security-audit",
+    description: "Run VibeShield v7.0 6-phase deep web & AI app security audit (secrets, Supabase RLS, Firebase, TLS 443, CSP, CVEs) on a deployment URL.",
+    arguments: [
+      { name: "url", description: "Live deployment URL to audit (e.g. https://yourapp.vercel.app)", required: true },
     ],
   },
 ];
@@ -217,9 +277,9 @@ function formatMarkdownSummary(toolName, data) {
       `- **USPTO Live Trademarks:** ${data.trademarks.length ? data.trademarks.map((t) => `${t.wordMark} (#${t.serialNumber})`).join(", ") : "None matched"}`,
       data.issues.length ? `\n### Detected Risks\n${data.issues.map((i) => `- ${i}`).join("\n")}` : "\nNo major naming blockers detected.",
       `\n### Free Interactive Tools & 1-Click Custom Clearance Pack for \`${data.candidate}\``,
-      `- **Free 60-Name Generator & .com/.ai Screener:** [Generate Available Variations](${data.upgradeLinks.nameGeneratorUrl})`,
+      `- **Free 60-Name Generator & 78-TLD + 17 Aftermarket Screener (100% Free Forever):** [Open BrandShield v6.2](${data.upgradeLinks.nameGeneratorUrl})`,
       `- **Live Shareable Brand Report:** [Open Interactive Report](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Unlock BrandShield Pro ($12 one-time vs $228+/yr — 500-name CSV batch CLI, 60+ verified variations & Nice Class matrix):** [1-Click Custom Pack (Direct Checkout)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+      `- **Next Pre-Launch Steps:** [VibeShield v7.0 Security Audit](https://vibe-checker.appwrite.network/) · [InboxShield v7.0 Email DNS Audit](https://inbox-checker.appwrite.network/)`,
     ].join("\n");
   }
 
@@ -228,14 +288,29 @@ function formatMarkdownSummary(toolName, data) {
       `## Email Deliverability Audit: \`${data.domain}\` — **${data.score}/100 (Grade ${data.grade})**`,
       `- **Detected ESP:** ${data.detectedProvider}`,
       `- **SPF Lookups:** ${data.spf.present ? `${data.spf.dnsLookups}/10 lookups (\`${data.spf.record}\`)` : "Missing"}`,
-      `- **Active DKIM Selectors:** ${data.dkim.detectedSelectors.length ? data.dkim.detectedSelectors.join(", ") : "None detected across 18 standard selectors"}`,
+      `- **Active DKIM Selectors:** ${data.dkim.detectedSelectors.length ? data.dkim.detectedSelectors.join(", ") : "None detected across standard selectors"}`,
       `- **DMARC Policy:** \`${data.dmarc.policy}\` ${data.dmarc.record ? `(\`${data.dmarc.record}\`)` : ""}`,
       `- **DNSBL Blacklists:** ${data.blacklists.length ? data.blacklists.join(", ") : "Clean (0 listings)"}`,
       data.issues.length ? `\n### Priority Fixes\n${data.issues.map((i) => `- ${i}`).join("\n")}` : "\nAll core email authentication checks passed.",
-      `\n### Free SPF Flattener & 1-Click Custom DNS Fix Pack for \`${data.domain}\``,
+      `\n### Free SPF Flattener & Single-Domain Emergency Fix for \`${data.domain}\``,
       `- **Free Instant SPF Flattener (<10 DNS Lookups):** [Flatten SPF for ${data.domain}](${data.upgradeLinks.freeSpfFlattenerUrl})`,
-      `- **Live Custom DNS Fix Preview:** [Open Deliverability Report](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Unlock InboxShield Pro ($15 one-time vs $432/yr — Custom \`${data.domain}\` DNS zone patch, auto-flattener CLI & 6h drift alerts):** [1-Click Custom Fix Pack (Pre-filled for ${data.domain})](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+      `- **Live 6-Phase Protocol Diagnostic:** [Open InboxShield v7.0 Report](${data.upgradeLinks.interactiveReportUrl})`,
+      `- **Unlock Single-Domain Emergency Fix ($9 one-time vs $432/yr — Exact copy-paste SPF/DMARC/DKIM/MTA-STS/TLS-RPT for 5 registrars):** [Unlock for ${data.domain} ($9)](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
+    ].join("\n");
+  }
+
+  if (toolName === "audit_web_app_security") {
+    return [
+      `## VibeShield v7.0 — 6-Phase Web Security Audit: \`${data.url}\` — **${data.score}/100 (Grade ${data.grade})**`,
+      `- **TLS & DNS Takeover:** ${data.tls?.ok ? `${data.tls.protocol} (${data.tls.issuer || "CA"}, ${data.tls.daysRemaining ?? "?"}d valid)` : "No TLS"} · CNAME: ${data.takeover?.vulnerable ? `TAKEOVER RISK (${data.takeover.provider})` : (data.takeover?.cname || "Direct DNS")}`,
+      `- **JS Bundles & 52-Pattern Secrets:** ${data.bundlesInspected} bundle(s) (${data.totalKbScanned} KB) · **${data.secretsCount}** secret match(es)`,
+      `- **28 SPA-Filtered Endpoint Probes:** **${data.exposedEndpointsCount}** exposed · SourceMaps: ${data.exposedSourceMapsCount}`,
+      `- **Cloud DB Exposure:** Supabase open tables: **${data.supabaseExposedTables}** · Firebase RTDB/Firestore public: **${data.firebasePublic ? "YES" : "No"}**`,
+      `- **Headers, CSP & CVEs:** ${data.headersPassed}/${data.headersTotal} Observatory headers · CSP Grade **${data.cspGrade}** · **${data.cves.length}** passive CVE advisory(ies)`,
+      data.findings.length ? `\n### Top Security Findings (${data.findings.length})\n${data.findings.slice(0, 8).map((f) => `- **[${String(f.severity || "info").toUpperCase()}]** ${f.title}`).join("\n")}` : "\nNo security gaps detected across all 6 phases.",
+      `\n### Interactive 6-Phase Console & Single-App Fix Unlock ($9 One-Time)`,
+      `- **Open Live 6-Phase Trace Report:** [VibeShield v7.0 Scanner](${data.upgradeLinks.interactiveReportUrl})`,
+      `- **Unlock Single-App Fix Pack ($9 one-time vs $348/yr — Exact file/line evidence + Cursor/Lovable prompt, Vercel/Cloudflare/Nginx headers, Supabase RLS SQL & Firebase Rules):** [Direct Checkout](${data.upgradeLinks.directCheckoutUrl}) · [Card / PayPal via Gumroad](${data.upgradeLinks.gumroadUrl})`,
     ].join("\n");
   }
 
@@ -312,6 +387,58 @@ export async function dispatchJsonRpcMessage(msg) {
       else if (name === "audit_email_deliverability") data = await runEmailDeliverabilityAudit(args);
       else if (name === "audit_ai_search_visibility") data = await runAiSearchVisibilityAudit(args);
       else if (name === "full_launch_readiness_audit") data = await runFullLaunchAudit(args);
+      else if (name === "audit_web_app_security") {
+        const raw = await runVibeSecurityScan(args.url || "", { mode: args.mode === "fast" ? "fast" : "deep" });
+        if (!raw || !raw.ok) throw new Error(raw?.error || "Web security audit failed");
+        data = {
+          ok: true,
+          engineVersion: raw.engineVersion || "7.0.0",
+          url: raw.url,
+          hostname: raw.hostname,
+          score: raw.assessment?.score ?? 0,
+          grade: raw.assessment?.grade || "-",
+          status: raw.assessment?.status || "CHECKED",
+          checksExecuted: raw.checksExecuted || 100,
+          scanDurationMs: raw.scanDurationMs || 0,
+          stack: raw.stack || [],
+          tls: {
+            ok: Boolean(raw.tls?.ok),
+            protocol: raw.tls?.protocol || null,
+            cipher: raw.tls?.cipher || null,
+            issuer: raw.tls?.issuer || null,
+            daysRemaining: raw.tls?.daysRemaining ?? null,
+            weakProtocol: Boolean(raw.tls?.weakProtocol),
+          },
+          takeover: {
+            cname: raw.takeover?.cname || null,
+            vulnerable: Boolean(raw.takeover?.vulnerable),
+            provider: raw.takeover?.provider || null,
+          },
+          bundlesInspected: raw.bundles?.inspected || 0,
+          totalKbScanned: Math.round((raw.bundles?.totalBytesScanned || 0) / 1024),
+          secretsCount: raw.secrets?.count || 0,
+          exposedEndpointsCount: raw.endpointProbes?.exposedCount || 0,
+          exposedSourceMapsCount: (raw.endpoints?.exposedSourceMaps || []).length,
+          supabaseExposedTables: (raw.supabase?.exposedTables || []).length,
+          firebasePublic: Boolean(raw.firebase?.rtdbPublic || raw.firebase?.firestorePublic),
+          headersPassed: raw.headers?.passed ?? 0,
+          headersTotal: raw.headers?.total ?? 10,
+          cspGrade: raw.cspAudit?.grade || "F",
+          cves: raw.frameworkCves || [],
+          findings: (raw.findings || []).map((f) => ({
+            severity: f.severity,
+            category: f.category,
+            title: f.title,
+            summary: f.summary || f.detail,
+            fileLocation: f.fileLocation || null,
+          })),
+          upgradeLinks: {
+            interactiveReportUrl: `https://vibe-checker.appwrite.network/?url=${encodeURIComponent(raw.url)}`,
+            directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/vibeshield?domain=${encodeURIComponent(raw.hostname)}`,
+            gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield",
+          },
+        };
+      }
       else {
         return { jsonrpc: "2.0", id, error: { code: -32602, message: `Unknown tool: ${name}` } };
       }
@@ -369,6 +496,25 @@ export async function dispatchJsonRpcMessage(msg) {
           },
         };
       }
+      if (pName === "pre-launch-security-audit") {
+        const u = params?.arguments?.url || `https://${dom}`;
+        return {
+          jsonrpc: "2.0",
+          id,
+          result: {
+            description: `VibeShield v7.0 6-phase security audit for ${u}`,
+            messages: [
+              {
+                role: "user",
+                content: {
+                  type: "text",
+                  text: `Run audit_web_app_security on "${u}" and provide an ordered remediation checklist covering leaked secrets, Supabase RLS, Firebase rules, exposed endpoints, TLS/CNAME, CSP syntax, and framework CVEs.`,
+                },
+              },
+            ],
+          },
+        };
+      }
       return { jsonrpc: "2.0", id, error: { code: -32602, message: `Unknown prompt: ${pName}` } };
     }
 
@@ -382,14 +528,15 @@ export async function dispatchJsonRpcMessage(msg) {
         const catalog = {
           provider: "OmniForge Studio",
           freeMcpCapabilities: [
-            "Single-name RDAP + developer handle + USPTO trademark check",
-            "Single-domain SPF 10-lookup counter + 18-selector DKIM + DMARC + DNSBL check",
+            "6-phase web & AI app security audit (TLS 443, CNAME takeover, 52 secrets, 28 SPA-filtered probes, Supabase RLS, Firebase RTDB/Firestore, Observatory CSP & CVEs)",
+            "Brand & domain availability across RDAP + developer handles + USPTO trademarks (100% Free on BrandShield v6.2)",
+            "Single-domain SPF 10-lookup counter + DKIM + DMARC + DNSBL email deliverability check",
             "Single-URL AI crawler robots.txt + /llms.txt + Schema.org JSON-LD audit",
           ],
           proToolkits: [
-            { name: "VibeShield Pro", soloUsd: 9, agencyUsd: 25, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/vibeshield" },
-            { name: "BrandShield Pro", soloUsd: 12, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/brandshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/brandshield" },
-            { name: "InboxShield Pro", soloUsd: 15, agencyUsd: 35, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
+            { name: "VibeShield v7.0 Single-App Fix Unlock", soloUsd: 9, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/vibeshield" },
+            { name: "InboxShield v7.0 Single-Domain Emergency Fix", soloUsd: 9, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
+            { name: "BrandShield v6.2 (100% Free Forever)", soloUsd: 0, agencyUsd: 0, webUrl: "https://brand-checker.appwrite.network/" },
             { name: "CiteReady Pro", soloUsd: 12, agencyUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready" },
             { name: "OmniForge 4-in-1 Complete Founder Suite", soloUsd: 29, agencyUsd: 59, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack" },
           ],
