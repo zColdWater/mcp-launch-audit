@@ -1,8 +1,9 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.zColdWater/mcp-launch-audit",
-  "description": "Pre-launch brand & USPTO trademark checks, SPF/DKIM/DMARC/DNSBL email audits, and AI search (llms.txt) readiness.",
-  "status": "active",
+  "title": "OmniForge Launch Audit MCP",
+  "description": "Audit brand domains, USPTO trademarks, SPF/DKIM/DMARC email, and AI search (llms.txt) readiness.",
+  "websiteUrl": "https://brand-checker.appwrite.network",
   "repository": {
     "url": "https://github.com/zColdWater/mcp-launch-audit",
     "source": "github"
