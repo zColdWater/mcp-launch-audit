@@ -4,7 +4,7 @@
 [![Node.js >= 18](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org)
 [![Dependencies: 0](https://img.shields.io/badge/dependencies-0-success.svg)](./package.json)
 [![MCP Protocol](https://img.shields.io/badge/MCP-2025--03--26%20%7C%202024--11--05-7c3aed.svg)](https://modelcontextprotocol.io)
-[![BrandShield](https://brand-checker.appwrite.network/badge/brand/BrandShield.svg)](https://brand-checker.appwrite.network/report/BrandShield)
+[![BrandShield](https://brand-checker.appwrite.network/badge/brand/BrandShieldCLI.svg)](https://brand-checker.appwrite.network/report/BrandShieldCLI)
 [![Email Security](https://inbox-checker.appwrite.network/badge/inbox/stripe.com.svg)](https://inbox-checker.appwrite.network/?domain=stripe.com)
 [![AI CiteReady](https://citeready-checker.appwrite.network/badge/citeready/stripe.com.svg)](https://citeready-checker.appwrite.network/?url=https://stripe.com)
 
