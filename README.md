@@ -11,6 +11,9 @@
 
 Works out of the box with **zero API keys**, **zero `npm` sub-dependencies**, and **zero configuration** in Claude Desktop, Claude Code, Cursor, Windsurf, Cline, and VS Code.
 
+- **Companion 40-Skill Pack (`skills.sh`):** `npx skills add zColdWater/omniforge-skills` ([40 Interactive Guides](https://zcoldwater.github.io/omniforge-skills/) · [skills.sh Registry](https://www.skills.sh/zColdWater/omniforge-skills))
+- **2026 Open Benchmarks (N=60 Active SaaS Domains Each):** [Web Security Headers & TLS Study](https://zcoldwater.github.io/vibeshield-cli/web-security-headers-benchmark-2026.html) · [Email Deliverability DNS Study](https://zcoldwater.github.io/inboxshield-cli/email-deliverability-benchmark-2026.html)
+
 ---
 
 ## Quick Start
