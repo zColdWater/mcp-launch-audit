@@ -4,7 +4,8 @@
 [![Node.js >= 20](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen.svg)](https://nodejs.org)
 [![Dependencies: 0](https://img.shields.io/badge/dependencies-0-success.svg)](./package.json)
 [![MCP Protocol](https://img.shields.io/badge/MCP-2025--03--26%20%7C%202024--11--05-7c3aed.svg)](https://modelcontextprotocol.io)
-[![Audited by VibeShield](https://vibe-checker.appwrite.network/api/badge.svg?domain=mcp-launch-audit&score=98&grade=A%2B)](https://vibe-checker.appwrite.network/)
+[![Live VibeShield Score](https://vibe-checker.appwrite.network/api/badge.svg?url=vibe-checker.appwrite.network)](https://vibe-checker.appwrite.network/?url=https://vibe-checker.appwrite.network/)
+[![AI Search Readiness](https://citeready-checker.appwrite.network/api/badge?url=citeready-checker.appwrite.network)](https://citeready-checker.appwrite.network/?url=https://citeready-checker.appwrite.network/)
 [![Email Security](https://inbox-checker.appwrite.network/badge/inbox/stripe.com.svg)](https://inbox-checker.appwrite.network/?domain=stripe.com)
 
 **Zero-dependency Model Context Protocol (MCP) server for pre-launch startup & AI app audits** — combining **VibeShield v7.0** (6-phase web security, 52 secret rules, 28 SPA-filtered probes, TLS 443, CNAME takeover, Supabase RLS, Firebase RTDB/Firestore, Observatory CSP & CVEs), **BrandShield v6.2** (RDAP + handles + USPTO trademarks), **InboxShield v7.0** (SPF/DKIM/DMARC/DNSBL email deliverability), and **CiteReady** (`robots.txt`, `/llms.txt`, Schema.org JSON-LD) in one zero-dependency package.
