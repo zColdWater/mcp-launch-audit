@@ -4,6 +4,7 @@
 [![Node.js >= 20](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen.svg)](https://nodejs.org)
 [![Dependencies: 0](https://img.shields.io/badge/dependencies-0-success.svg)](./package.json)
 [![MCP Protocol](https://img.shields.io/badge/MCP-2025--03--26%20%7C%202024--11--05-7c3aed.svg)](https://modelcontextprotocol.io)
+[![OmniForge Launch Score](https://omnipulse-x402.appwrite.network/v1/badge/suite.svg?domain=vibe-checker.appwrite.network)](https://zcoldwater.github.io/omniforge-skills/black-friday-2026-developer-security-deal.html)
 [![Live VibeShield Score](https://vibe-checker.appwrite.network/api/badge.svg?url=vibe-checker.appwrite.network)](https://vibe-checker.appwrite.network/?url=https://vibe-checker.appwrite.network/)
 [![AI Search Readiness](https://citeready-checker.appwrite.network/api/badge?url=citeready-checker.appwrite.network)](https://citeready-checker.appwrite.network/?url=https://citeready-checker.appwrite.network/)
 [![Email Security](https://inbox-checker.appwrite.network/badge/inbox/stripe.com.svg)](https://inbox-checker.appwrite.network/?domain=stripe.com)
