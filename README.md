@@ -12,8 +12,10 @@
 
 Works out of the box with **zero API keys**, **zero `npm` sub-dependencies**, and **zero configuration** in Claude Desktop, Claude Code, Cursor, Windsurf, Cline, and VS Code.
 
-- **Companion 40-Skill Pack (`skills.sh`):** `npx skills add zColdWater/omniforge-skills` ([40 Interactive Guides](https://zcoldwater.github.io/omniforge-skills/) · [skills.sh Registry](https://www.skills.sh/zColdWater/omniforge-skills))
-- **2026 Open Benchmarks (N=60 Active SaaS Domains Each):** [Web Security Headers & TLS Study](https://zcoldwater.github.io/vibeshield-cli/web-security-headers-benchmark-2026.html) · [Email Deliverability DNS Study](https://zcoldwater.github.io/inboxshield-cli/email-deliverability-benchmark-2026.html)
+- **Companion 50-Skill Pack (`skills.sh`):** `npx skills add zColdWater/omniforge-skills` ([50 Interactive Guides](https://zcoldwater.github.io/omniforge-skills/) · [skills.sh Registry](https://www.skills.sh/zColdWater/omniforge-skills))
+- **Zero-Install 1-Line Terminal Audit (`cli.sh`):** `curl -fsSL https://vibe-checker.appwrite.network/cli.sh | sh -s -- --suite yourdomain.com`
+- **2026 Flagship Empirical Report Hub (390 Live Audits Across 5 Studies):** [2026 State of Indie & AI Startup Infrastructure Report](https://zcoldwater.github.io/omniforge-skills/state-of-ai-startup-infrastructure-2026.html) · [Interactive 24-Point Launch Checklist](https://zcoldwater.github.io/omniforge-skills/pre-launch-security-checklist-2026.html)
+- **Black Friday 2026 Developer Deal Stack ($2 Single / $5 Complete 3-in-1 Suite — 83% OFF, One-Time):** [View Deal Stack](https://zcoldwater.github.io/omniforge-skills/black-friday-2026-developer-security-deal.html)
 
 ---
 
