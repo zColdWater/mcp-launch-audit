@@ -1,5 +1,6 @@
 # mcp-launch-audit (`v2.0.0`)
 
+[![zColdWater/mcp-launch-audit MCP server](https://glama.ai/mcp/servers/zColdWater/mcp-launch-audit/badges/score.svg)](https://glama.ai/mcp/servers/zColdWater/mcp-launch-audit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Node.js >= 20](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen.svg)](https://nodejs.org)
 [![Dependencies: 0](https://img.shields.io/badge/dependencies-0-success.svg)](./package.json)
