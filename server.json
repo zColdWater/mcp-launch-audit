@@ -3,7 +3,7 @@
   "name": "io.github.zColdWater/mcp-launch-audit",
   "title": "OmniForge Launch Audit MCP v2.0",
   "description": "Audit web & AI app security (VibeShield v7.0), brand domains/USPTO trademarks, SPF/DKIM/DMARC email deliverability, and AI search (llms.txt) readiness.",
-  "websiteUrl": "https://vibe-checker.appwrite.network",
+  "websiteUrl": "https://shipbastion.com",
   "repository": {
     "url": "https://github.com/zColdWater/mcp-launch-audit",
     "source": "github"
@@ -12,7 +12,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://brand-checker.appwrite.network/mcp"
+      "url": "https://brand.shipbastion.com/mcp"
     }
   ]
 }

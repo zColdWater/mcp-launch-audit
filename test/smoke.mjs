@@ -38,7 +38,7 @@ send({ jsonrpc: "2.0", id: 2, method: "tools/list" });
 send({ jsonrpc: "2.0", id: 3, method: "prompts/list" });
 send({ jsonrpc: "2.0", id: 4, method: "resources/list" });
 send({ jsonrpc: "2.0", id: 5, method: "tools/call", params: { name: "audit_email_deliverability", arguments: { domain: "resend.com" } } });
-send({ jsonrpc: "2.0", id: 6, method: "tools/call", params: { name: "audit_web_app_security", arguments: { url: "https://vibe-checker.appwrite.network", mode: "fast" } } });
+send({ jsonrpc: "2.0", id: 6, method: "tools/call", params: { name: "audit_web_app_security", arguments: { url: "https://shipbastion.com", mode: "fast" } } });
 
 await waitForCount(6);
 child.kill();

@@ -5,17 +5,17 @@
 [![Node.js >= 20](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen.svg)](https://nodejs.org)
 [![Dependencies: 0](https://img.shields.io/badge/dependencies-0-success.svg)](./package.json)
 [![MCP Protocol](https://img.shields.io/badge/MCP-2025--03--26%20%7C%202024--11--05-7c3aed.svg)](https://modelcontextprotocol.io)
-[![OmniForge Launch Score](https://omnipulse-x402.appwrite.network/v1/badge/suite.svg?domain=vibe-checker.appwrite.network)](https://zcoldwater.github.io/omniforge-skills/black-friday-2026-developer-security-deal.html)
-[![Live VibeShield Score](https://vibe-checker.appwrite.network/api/badge.svg?url=vibe-checker.appwrite.network)](https://vibe-checker.appwrite.network/?url=https://vibe-checker.appwrite.network/)
-[![AI Search Readiness](https://citeready-checker.appwrite.network/api/badge?url=citeready-checker.appwrite.network)](https://citeready-checker.appwrite.network/?url=https://citeready-checker.appwrite.network/)
-[![Email Security](https://inbox-checker.appwrite.network/badge/inbox/stripe.com.svg)](https://inbox-checker.appwrite.network/?domain=stripe.com)
+[![OmniForge Launch Score](https://api.shipbastion.com/v1/badge/suite.svg?domain=shipbastion.com)](https://zcoldwater.github.io/omniforge-skills/black-friday-2026-developer-security-deal.html)
+[![Live VibeShield Score](https://shipbastion.com/api/badge.svg?url=shipbastion.com)](https://shipbastion.com/?url=https://shipbastion.com/)
+[![AI Search Readiness](https://cite.shipbastion.com/api/badge?url=cite.shipbastion.com)](https://cite.shipbastion.com/?url=https://cite.shipbastion.com/)
+[![Email Security](https://inbox.shipbastion.com/badge/inbox/stripe.com.svg)](https://inbox.shipbastion.com/?domain=stripe.com)
 
 **Zero-dependency Model Context Protocol (MCP) server for pre-launch startup & AI app audits** — combining **VibeShield v7.0** (6-phase web security, 52 secret rules, 28 SPA-filtered probes, TLS 443, CNAME takeover, Supabase RLS, Firebase RTDB/Firestore, Observatory CSP & CVEs), **BrandShield v6.2** (RDAP + handles + USPTO trademarks), **InboxShield v7.0** (SPF/DKIM/DMARC/DNSBL email deliverability), and **CiteReady** (`robots.txt`, `/llms.txt`, Schema.org JSON-LD) in one zero-dependency package.
 
 Works out of the box with **zero API keys**, **zero `npm` sub-dependencies**, and **zero configuration** in Claude Desktop, Claude Code, Cursor, Windsurf, Cline, and VS Code.
 
 - **Companion 50-Skill Pack (`skills.sh`):** `npx skills add zColdWater/omniforge-skills` ([50 Interactive Guides](https://zcoldwater.github.io/omniforge-skills/) · [skills.sh Registry](https://www.skills.sh/zColdWater/omniforge-skills))
-- **Zero-Install 1-Line Terminal Audit (`cli.sh`):** `curl -fsSL https://vibe-checker.appwrite.network/cli.sh | sh -s -- --suite yourdomain.com`
+- **Zero-Install 1-Line Terminal Audit (`cli.sh`):** `curl -fsSL https://shipbastion.com/cli.sh | sh -s -- --suite yourdomain.com`
 - **2026 Flagship Empirical Report & Interactive Workbenches:** [390-Audit Report Hub](https://zcoldwater.github.io/omniforge-skills/state-of-ai-startup-infrastructure-2026.html) · [24-Point Pre-Launch Checklist](https://zcoldwater.github.io/omniforge-skills/pre-launch-security-checklist-2026.html) · [Live README SVG Badge Studio](https://zcoldwater.github.io/omniforge-skills/launch-score-badge-generator.html) · [3-Year TCO Calculator](https://zcoldwater.github.io/omniforge-skills/saas-security-tco-calculator-2026.html) · [Vibe-Coding Security Cheat Sheet (8 Fix Prompts)](https://zcoldwater.github.io/omniforge-skills/vibecoding-security-cheat-sheet-2026.html)
 - **Black Friday 2026 Developer Deal Stack ($2 Single / $5 Complete 3-in-1 Suite — 83% OFF, One-Time):** [View Deal Stack](https://zcoldwater.github.io/omniforge-skills/black-friday-2026-developer-security-deal.html)
 
@@ -47,7 +47,7 @@ claude mcp add launch-audit -- npx -y github:zColdWater/mcp-launch-audit
 ### Option B: Zero-Install Remote Streamable-HTTP Endpoint
 
 ```bash
-claude mcp add --transport http launch-audit https://brand-checker.appwrite.network/mcp
+claude mcp add --transport http launch-audit https://brand.shipbastion.com/mcp
 ```
 
 ### Option C: Docker
@@ -77,11 +77,11 @@ All tools are strictly **read-only** (`readOnlyHint: true`, `destructiveHint: fa
 
 | Pillar | Live Online Web App | Open-Source Repo | Pricing |
 | :--- | :--- | :--- | :--- |
-| **6-Phase Web & AI App Security** | [vibe-checker.appwrite.network](https://vibe-checker.appwrite.network) | [zColdWater/vibeshield-cli](https://github.com/zColdWater/vibeshield-cli) | Free 6-Phase Scan · [$2 Launch Special (~~$9~~)](https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield) |
-| **Email Deliverability & DMARC** | [inbox-checker.appwrite.network](https://inbox-checker.appwrite.network) · [/spf-flattener](https://inbox-checker.appwrite.network/spf-flattener) | [zColdWater/inboxshield-cli](https://github.com/zColdWater/inboxshield-cli) | Free 6-Phase Audit · [$2 Launch Special (~~$9~~)](https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield) |
-| **Domain, 78 TLDs & Aftermarket** | [brand-checker.appwrite.network](https://brand-checker.appwrite.network) · [/namer](https://brand-checker.appwrite.network/namer) | [zColdWater/brandshield-cli](https://github.com/zColdWater/brandshield-cli) | **100% Free Forever** |
-| **AI Search & `/llms.txt`** | [citeready-checker.appwrite.network](https://citeready-checker.appwrite.network) · [/generator](https://citeready-checker.appwrite.network/generator) | [zColdWater/citeready-cli](https://github.com/zColdWater/citeready-cli) | Free Audit · [$2 Launch Special (~~$12~~)](https://omnipulse-x402.appwrite.network/go/gumroad/citeready) |
-| **OmniForge Complete Suite** | Unlocks all Web Pro suites | 228+ Benchmarks: [launch-audit-reports](https://zcoldwater.github.io/launch-audit-reports/) | [$5 Launch Special (~~$29~~)](https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack) |
+| **6-Phase Web & AI App Security** | [shipbastion.com](https://shipbastion.com) | [zColdWater/vibeshield-cli](https://github.com/zColdWater/vibeshield-cli) | Free 6-Phase Scan · [$2 Launch Special (~~$9~~)](https://api.shipbastion.com/go/gumroad/vibeshield) |
+| **Email Deliverability & DMARC** | [inbox.shipbastion.com](https://inbox.shipbastion.com) · [/spf-flattener](https://inbox.shipbastion.com/spf-flattener) | [zColdWater/inboxshield-cli](https://github.com/zColdWater/inboxshield-cli) | Free 6-Phase Audit · [$2 Launch Special (~~$9~~)](https://api.shipbastion.com/go/gumroad/inboxshield) |
+| **Domain, 78 TLDs & Aftermarket** | [brand.shipbastion.com](https://brand.shipbastion.com) · [/namer](https://brand.shipbastion.com/namer) | [zColdWater/brandshield-cli](https://github.com/zColdWater/brandshield-cli) | **100% Free Forever** |
+| **AI Search & `/llms.txt`** | [cite.shipbastion.com](https://cite.shipbastion.com) · [/generator](https://cite.shipbastion.com/generator) | [zColdWater/citeready-cli](https://github.com/zColdWater/citeready-cli) | Free Audit · [$2 Launch Special (~~$12~~)](https://api.shipbastion.com/go/gumroad/citeready) |
+| **OmniForge Complete Suite** | Unlocks all Web Pro suites | 228+ Benchmarks: [launch-audit-reports](https://zcoldwater.github.io/launch-audit-reports/) | [$5 Launch Special (~~$29~~)](https://api.shipbastion.com/go/gumroad/launch-stack) |
 
 ---
 
@@ -93,7 +93,7 @@ npm test
 
 ## Support & Contact
 
-OmniForge · Agent Arena Studio — `agentarenastudio@proton.me` · [@agentarenastudi](https://x.com/agentarenastudi) · [Support Portal](https://omnipulse-x402.appwrite.network/support) · [14-Day Refund Policy](https://omnipulse-x402.appwrite.network/refund-policy)
+OmniForge · Agent Arena Studio — `agentarenastudio@proton.me` · [@agentarenastudi](https://x.com/agentarenastudi) · [Support Portal](https://api.shipbastion.com/support) · [14-Day Refund Policy](https://api.shipbastion.com/refund-policy)
 
 ## License
 

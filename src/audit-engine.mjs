@@ -137,7 +137,7 @@ export async function runBrandAudit({ name, tlds = ["com", "io", "ai", "dev"] })
   // Try enriched cloud check first (includes live USPTO trademark & app store checks), fallback to pure local RDAP+API
   let cloudData = null;
   try {
-    const u = `https://brand-checker.appwrite.network/check?names=${encodeURIComponent(label)}&tlds=${encodeURIComponent(cleanTlds.join(","))}&format=json`;
+    const u = `https://brand.shipbastion.com/check?names=${encodeURIComponent(label)}&tlds=${encodeURIComponent(cleanTlds.join(","))}&format=json`;
     const r = await fetchWithTimeout(u, {}, 7500);
     if (r.ok) {
       const j = await r.json();
@@ -198,11 +198,11 @@ export async function runBrandAudit({ name, tlds = ["com", "io", "ai", "dev"] })
     trademarks,
     issues,
     upgradeLinks: {
-      interactiveReportUrl: `https://brand-checker.appwrite.network/report/${encodeURIComponent(label)}`,
-      nameGeneratorUrl: `https://brand-checker.appwrite.network/namer?q=${encodeURIComponent(label)}`,
+      interactiveReportUrl: `https://brand.shipbastion.com/report/${encodeURIComponent(label)}`,
+      nameGeneratorUrl: `https://brand.shipbastion.com/namer?q=${encodeURIComponent(label)}`,
       proToolkitName: "BrandShield Pro (500-name batch CSV, 60+ verified variations & Nice Class conflict matrix)",
-      gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/brandshield",
-      directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/brandshield?domain=${encodeURIComponent(`${label}.com`)}`,
+      gumroadUrl: "https://api.shipbastion.com/go/gumroad/brandshield",
+      directCheckoutUrl: `https://api.shipbastion.com/checkout/brandshield?domain=${encodeURIComponent(`${label}.com`)}`,
     },
   };
 }
@@ -379,11 +379,11 @@ export async function runEmailDeliverabilityAudit({ domain }) {
     blacklists: listedBlacklists,
     issues,
     upgradeLinks: {
-      interactiveReportUrl: `https://inbox-checker.appwrite.network/?domain=${encodeURIComponent(cleanDomain)}`,
-      freeSpfFlattenerUrl: `https://inbox-checker.appwrite.network/spf-flattener?domain=${encodeURIComponent(cleanDomain)}`,
+      interactiveReportUrl: `https://inbox.shipbastion.com/?domain=${encodeURIComponent(cleanDomain)}`,
+      freeSpfFlattenerUrl: `https://inbox.shipbastion.com/spf-flattener?domain=${encodeURIComponent(cleanDomain)}`,
       proToolkitName: "InboxShield Pro (Automatic SPF Flattener, 500-domain batch audit & 24/7 Slack/Discord drift alerts)",
-      gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield",
-      directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/inboxshield?domain=${encodeURIComponent(cleanDomain)}`,
+      gumroadUrl: "https://api.shipbastion.com/go/gumroad/inboxshield",
+      directCheckoutUrl: `https://api.shipbastion.com/checkout/inboxshield?domain=${encodeURIComponent(cleanDomain)}`,
     },
   };
 }
@@ -516,11 +516,11 @@ export async function runAiSearchVisibilityAudit({ url }) {
     },
     issues,
     upgradeLinks: {
-      interactiveReportUrl: `https://citeready-checker.appwrite.network/?url=${encodeURIComponent(target.href)}`,
-      freeLlmsGeneratorUrl: `https://citeready-checker.appwrite.network/generator?url=${encodeURIComponent(target.href)}`,
+      interactiveReportUrl: `https://cite.shipbastion.com/?url=${encodeURIComponent(target.href)}`,
+      freeLlmsGeneratorUrl: `https://cite.shipbastion.com/generator?url=${encodeURIComponent(target.href)}`,
       proToolkitName: "CiteReady Pro (500-page local crawler, automatic /llms.txt + JSON-LD compiler & CI visibility gate)",
-      gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready",
-      directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/citeready?domain=${encodeURIComponent(target.hostname)}`,
+      gumroadUrl: "https://api.shipbastion.com/go/gumroad/citeready",
+      directCheckoutUrl: `https://api.shipbastion.com/checkout/citeready?domain=${encodeURIComponent(target.hostname)}`,
     },
   };
 }
@@ -561,13 +561,13 @@ export async function runFullLaunchAudit({ domain, brandName }) {
       soloPriceUsd: 29,
       agencyPriceUsd: 59,
       freeTools: {
-        vibeScannerUrl: `https://vibe-checker.appwrite.network/?url=${encodeURIComponent(`https://${cleanDomain}`)}`,
-        brandNamerUrl: `https://brand-checker.appwrite.network/namer?q=${encodeURIComponent(inferredBrand)}`,
-        spfFlattenerUrl: `https://inbox-checker.appwrite.network/spf-flattener?domain=${encodeURIComponent(cleanDomain)}`,
-        llmsGeneratorUrl: `https://citeready-checker.appwrite.network/generator?url=${encodeURIComponent(`https://${cleanDomain}`)}`,
+        vibeScannerUrl: `https://shipbastion.com/?url=${encodeURIComponent(`https://${cleanDomain}`)}`,
+        brandNamerUrl: `https://brand.shipbastion.com/namer?q=${encodeURIComponent(inferredBrand)}`,
+        spfFlattenerUrl: `https://inbox.shipbastion.com/spf-flattener?domain=${encodeURIComponent(cleanDomain)}`,
+        llmsGeneratorUrl: `https://cite.shipbastion.com/generator?url=${encodeURIComponent(`https://${cleanDomain}`)}`,
       },
-      gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack",
-      directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/launch-stack?domain=${encodeURIComponent(cleanDomain)}`,
+      gumroadUrl: "https://api.shipbastion.com/go/gumroad/launch-stack",
+      directCheckoutUrl: `https://api.shipbastion.com/checkout/launch-stack?domain=${encodeURIComponent(cleanDomain)}`,
     },
   };
 }

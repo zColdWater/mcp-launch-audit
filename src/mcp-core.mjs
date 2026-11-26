@@ -279,7 +279,7 @@ function formatMarkdownSummary(toolName, data) {
       `\n### Free Interactive Tools & 1-Click Custom Clearance Pack for \`${data.candidate}\``,
       `- **Free 60-Name Generator & 78-TLD + 17 Aftermarket Screener (100% Free Forever):** [Open BrandShield v6.2](${data.upgradeLinks.nameGeneratorUrl})`,
       `- **Live Shareable Brand Report:** [Open Interactive Report](${data.upgradeLinks.interactiveReportUrl})`,
-      `- **Next Pre-Launch Steps:** [VibeShield v7.0 Security Audit](https://vibe-checker.appwrite.network/) · [InboxShield v7.0 Email DNS Audit](https://inbox-checker.appwrite.network/)`,
+      `- **Next Pre-Launch Steps:** [VibeShield v7.0 Security Audit](https://shipbastion.com/) · [InboxShield v7.0 Email DNS Audit](https://inbox.shipbastion.com/)`,
     ].join("\n");
   }
 
@@ -433,9 +433,9 @@ export async function dispatchJsonRpcMessage(msg) {
             fileLocation: f.fileLocation || null,
           })),
           upgradeLinks: {
-            interactiveReportUrl: `https://vibe-checker.appwrite.network/?url=${encodeURIComponent(raw.url)}`,
-            directCheckoutUrl: `https://omnipulse-x402.appwrite.network/checkout/vibeshield?domain=${encodeURIComponent(raw.hostname)}`,
-            gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield",
+            interactiveReportUrl: `https://shipbastion.com/?url=${encodeURIComponent(raw.url)}`,
+            directCheckoutUrl: `https://api.shipbastion.com/checkout/vibeshield?domain=${encodeURIComponent(raw.hostname)}`,
+            gumroadUrl: "https://api.shipbastion.com/go/gumroad/vibeshield",
           },
         };
       }
@@ -534,11 +534,11 @@ export async function dispatchJsonRpcMessage(msg) {
             "Single-URL AI crawler robots.txt + /llms.txt + Schema.org JSON-LD audit",
           ],
           proToolkits: [
-            { name: "VibeShield v7.0 Single-App Fix Unlock", soloUsd: 2, regularUsd: 9, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/vibeshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/vibeshield" },
-            { name: "InboxShield v7.0 Single-Domain Emergency Fix", soloUsd: 2, regularUsd: 9, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/inboxshield", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/inboxshield" },
-            { name: "BrandShield v6.2 (100% Free Forever)", soloUsd: 0, agencyUsd: 0, webUrl: "https://brand-checker.appwrite.network/" },
-            { name: "CiteReady Pro", soloUsd: 2, regularUsd: 12, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/citeready", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/citeready" },
-            { name: "OmniForge 4-in-1 Complete Founder Suite", soloUsd: 5, regularUsd: 29, gumroadUrl: "https://omnipulse-x402.appwrite.network/go/gumroad/launch-stack", directCheckoutUrl: "https://omnipulse-x402.appwrite.network/checkout/launch-stack" },
+            { name: "VibeShield v7.0 Single-App Fix Unlock", soloUsd: 2, regularUsd: 9, gumroadUrl: "https://api.shipbastion.com/go/gumroad/vibeshield", directCheckoutUrl: "https://api.shipbastion.com/checkout/vibeshield" },
+            { name: "InboxShield v7.0 Single-Domain Emergency Fix", soloUsd: 2, regularUsd: 9, gumroadUrl: "https://api.shipbastion.com/go/gumroad/inboxshield", directCheckoutUrl: "https://api.shipbastion.com/checkout/inboxshield" },
+            { name: "BrandShield v6.2 (100% Free Forever)", soloUsd: 0, agencyUsd: 0, webUrl: "https://brand.shipbastion.com/" },
+            { name: "CiteReady Pro", soloUsd: 2, regularUsd: 12, gumroadUrl: "https://api.shipbastion.com/go/gumroad/citeready", directCheckoutUrl: "https://api.shipbastion.com/checkout/citeready" },
+            { name: "OmniForge 4-in-1 Complete Founder Suite", soloUsd: 5, regularUsd: 29, gumroadUrl: "https://api.shipbastion.com/go/gumroad/launch-stack", directCheckoutUrl: "https://api.shipbastion.com/checkout/launch-stack" },
           ],
         };
         return {
