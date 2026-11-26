@@ -12,6 +12,17 @@
 
 **Zero-dependency Model Context Protocol (MCP) server for pre-launch startup & AI app audits** — combining **VibeShield v7.0** (6-phase web security, 52 secret rules, 28 SPA-filtered probes, TLS 443, CNAME takeover, Supabase RLS, Firebase RTDB/Firestore, Observatory CSP & CVEs), **BrandShield v6.2** (RDAP + handles + USPTO trademarks), **InboxShield v7.0** (SPF/DKIM/DMARC/DNSBL email deliverability), and **CiteReady** (`robots.txt`, `/llms.txt`, Schema.org JSON-LD) in one zero-dependency package.
 
+
+<!-- shipbastion-hero:start -->
+<p align="center">
+  <a href="https://shipbastion.com/">
+    <img src="./assets/shipbastion-launch-stack-preview.png" alt="ShipBastion Launch Stack — Security, Email DNS, AI Search & Brand Clearance Suite" width="100%" />
+  </a>
+</p>
+
+*Powered by the live [ShipBastion](https://shipbastion.com/) 4-engine suite (also exposed via remote MCP at `https://api.shipbastion.com/mcp`).*
+<!-- shipbastion-hero:end -->
+
 Works out of the box with **zero API keys**, **zero `npm` sub-dependencies**, and **zero configuration** in Claude Desktop, Claude Code, Cursor, Windsurf, Cline, and VS Code.
 
 - **Companion 50-Skill Pack (`skills.sh`):** `npx skills add zColdWater/omniforge-skills` ([50 Interactive Guides](https://zcoldwater.github.io/omniforge-skills/) · [skills.sh Registry](https://www.skills.sh/zColdWater/omniforge-skills))
